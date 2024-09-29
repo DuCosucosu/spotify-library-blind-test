@@ -69,7 +69,7 @@ function setLoadingProgress(progress)
 function loadSongs()
 {
     //Get the total
-    s.getMySavedTracks({
+    /*s.getMySavedTracks({
             limit: 1,
             offset: 0,
         },
@@ -85,7 +85,22 @@ function loadSongs()
             //Run the 1st iteration
             loadSongsIteration();
         }
-    );
+    );*/
+    
+    var PLAYLIST = document.getElementById("playlist-input").value;
+    s.getPlaylist("test", PLAYLIST).then(function(data) {
+        data = data.tracks;
+        total = data.total;
+
+
+        if (limit != -1 && total > limit)
+            total = limit;
+
+        setLoadingProgress(0);
+
+        //Run the 1st iteration
+        loadSongsIteration();
+    })
 }
 
 function shuffle(array) {
@@ -374,7 +389,7 @@ function startGameForNewSong()
     audio = new Audio(song.track.preview_url);
     audio.volume = 0.05;
     audio.onended = result;
-    $("#time").text("30");
+    $("#time").text(30);
     audio.ontimeupdate = function()
     {
         $("#time").text(Math.floor(audio.duration) - Math.floor(audio.currentTime));
@@ -388,12 +403,11 @@ function startGameForNewSong()
 
 function loadSongsIteration()
 {
-     s.getMySavedTracks({
-            limit: 50,
-            offset: loaded,
-        },
-        function(error, data)
+    var PLAYLIST = document.getElementById("playlist-input").value;
+     s.getPlaylist("test", PLAYLIST).then(
+        function(data)
         {
+            data = data.tracks;
             var filteredData = data.items.filter(({track}) => !!track.preview_url);
             songs = songs.concat(filteredData);
             loaded += data.items.length;

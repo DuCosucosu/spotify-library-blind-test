@@ -16,6 +16,11 @@
     border: 0px solid #000000;
 }
 
+#playlist-input {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
 .songDetails
 {
     padding-left: 9px;

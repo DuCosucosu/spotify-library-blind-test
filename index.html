@@ -23,15 +23,16 @@
         <div id="login" style="display: none;" class="page page-hidden">
             <div class="container">
                 <div class="page-header" style="text-align: center; margin-top: 0px;">
-                    <h1 style="margin-top: 0px;">Spotify Library Blind Test</h1>
+                    <h1 style="margin-top: 0px;">Spotify Playlist Blind Test</h1>
                     <h3>How well do you know your own tracks ?</h3>
                 </div>
             
                 <div class="page-header" style="margin-top: 20px;">
-                    <p>This game uses the tracks of your Spotify's account library. Listen to randomly picked ones and try to guess their name. The bigger your library is, the funnier it gets !</p>
+                    <p>This game uses the tracks of a Spotify playlist. Listen to randomly picked ones and try to guess their name. The bigger your playlist is, the funnier it gets !</p>
                     
                     <p>The login process is secure (we never see your credentials), and we don't store any personnal informations about your account. Just login and play !</p>
                 </div>
+                <input id="playlist-input"></input>
                 <div class="row">
                     <div class="col-md-10">
                         <a href="#" class="btn btn-success btn-login" onclick="javascript:openLogin()"><i class="fa fa-spotify" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span class="btn-login-text">Login to Spotify (free or premium)</span></a>
@@ -150,14 +151,15 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="aboutModalLabel">About Spotify Library Blind Test</h4>
+                <h4 class="modal-title" id="aboutModalLabel">About Spotify Playlist Blind Test</h4>
               </div>
               <div class="modal-body">
                 <p>
+                    Fork of natinusala by DuCouscous.
                     Website made by natinusala, using <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and the <a href="https://bootswatch.com/lumen/" target="_blank">Lumen</a> Bootswatch. Awesome icons provided by <a href="http://fontawesome.io/" target="_blank">FontAwesome</a>.
                 </p>
                   <p>
-                      GitHub repository : <a target="_blank" href="https://github.com/natinusala/spotify-library-blind-test">https://github.com/natinusala/spotify-library-blind-test</a>
+                      GitHub repository : <a target="_blank" href="https://github.com/DuCosucosu/spotify-library-blind-test">https://github.com/natinusala/spotify-library-blind-test</a>
                   </p>
                 <p>
                     We talk to Spotify with the <a href="https://github.com/JMPerez/spotify-web-api-js" target="_blank">spotify-web-api-js</a> library. We also use <a href="https://leaverou.github.io/prefixfree/" target="_blank">-prefix-free</a> because, you know, prefixes.
